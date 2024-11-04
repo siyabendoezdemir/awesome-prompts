@@ -1,3 +1,4 @@
+import { Search } from "@/components/search";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mic, MoreHorizontal, PenLine, Sparkles, Image, CornerDownLeft } from "lucide-react";
@@ -14,19 +15,7 @@ export default async function Home() {
 
         {/* Input Field */}
         <div className="relative">
-          <Input
-            className="h-12 rounded-lg border-0 bg-[#202020] pl-4 pr-10 text-[#cecbc6] placeholder:text-[#cecbc6]/50 focus-visible:ring-0"
-            placeholder="Search prompts in your library..."
-            type="text"
-          />
-          <Button
-            size="icon"
-            variant="ghost"
-            className="absolute right-2 top-1/2 h-8 w-8 -translate-y-1/2 text-[#cecbc6]/50 hover:bg-transparent hover:text-[#cecbc6]"
-          >
-            <CornerDownLeft className="h-5 w-5" />
-            <span className="sr-only">Search Prompts</span>
-          </Button>
+          <Search />
         </div>
 
         {/* Action Buttons */}
