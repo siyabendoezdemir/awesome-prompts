@@ -1,0 +1,156 @@
+---
+title: "Pricing Plan Optimizer"
+emoji: "💰"
+category: "Business Strategy"
+author: "Assistant"
+created: "2024-11-04"
+---
+
+This prompt helps businesses optimize their usage-based API pricing plans by analyzing user patterns and recommending improved pricing structures. It's specifically designed to create pricing plans that better serve heavy users while potentially reducing pricing-related support inquiries.
+
+## Use Cases
+
+- SaaS companies looking to optimize their API pricing
+- Usage-based service providers wanting to improve customer satisfaction
+- Businesses aiming to reduce pricing-related support tickets
+- Companies looking to encourage increased platform usage
+- Startups planning to revamp their pricing structure
+
+## Variables
+
+The prompt uses two main variables:
+
+1. `{{CURRENT_PRICING_PLANS}}`: Your existing pricing structure
+   - Include all current tiers
+   - Price points
+   - Usage limits
+   - Additional features per tier
+
+2. `{{USER_DATA}}`: Usage patterns of your customers
+   - API request volumes
+   - Request frequencies
+   - Usage trends
+   - User categorization data
+
+## Optimization Tips
+
+1. **Data Preparation**
+   - Ensure user data spans at least 3-6 months for accurate pattern analysis
+   - Include both active and churned users for comprehensive insights
+   - Tag users by industry or use case if possible
+
+2. **Pricing Plan Input**
+   - Include all pricing tiers, even if planning to remove some
+   - Document any grandfathered plans
+   - Note any seasonal or promotional pricing
+
+3. **Additional Context**
+   - Add competitor pricing if available
+   - Include common support tickets related to pricing
+   - Note any industry-specific pricing norms
+
+## The Prompt
+
+<Prompt content={`
+You are an AI tasked with optimizing pricing plans for a usage-based API service. Your goal is to analyze user patterns and recommend optimized pricing plans that are cost-effective for heavy users, potentially reducing support inquiries on pricing.
+
+First, review the current pricing plans:
+<current_pricing_plans>
+{{CURRENT_PRICING_PLANS}}
+</current_pricing_plans>
+
+Now, analyze the following user data, which includes information on API request volumes and frequencies for various users:
+<user_data>
+{{USER_DATA}}
+</user_data>
+
+To complete this task, follow these steps:
+
+1. Analyze the user data to identify patterns in API usage, focusing on:
+   - Volume of requests per user
+   - Frequency of requests (e.g., daily, weekly, monthly)
+   - Any notable spikes or trends in usage
+
+2. Based on your analysis, recommend optimized pricing plans that:
+   - Are cost-effective for heavy users
+   - Encourage increased usage where appropriate
+   - Simplify the pricing structure if possible
+
+3. For each recommended pricing plan, provide a justification that includes:
+   - How it benefits heavy users
+   - Potential impact on reducing support inquiries
+   - Any potential drawbacks or considerations
+
+4. If applicable, suggest any additional features or tiers that could be added to the pricing structure to better accommodate user needs.
+
+Present your analysis and recommendations in the following format:
+
+<analysis>
+[Provide a summary of your analysis of user patterns here]
+</analysis>
+
+<recommendations>
+[List each recommended pricing plan here, with a brief description]
+</recommendations>
+
+<justifications>
+[Provide justifications for each recommended pricing plan here]
+</justifications>
+
+<additional_suggestions>
+[If applicable, provide any additional suggestions for improving the pricing structure here]
+</additional_suggestions>
+
+Remember to base all your recommendations on the data provided and ensure they align with the goal of optimizing pricing for heavy users while potentially reducing support inquiries.
+`} />
+
+## Example Output Structure
+
+<Prompt content={`
+<analysis>
+Our analysis of user patterns reveals three distinct usage tiers:
+- Light users: 0-1000 requests/month (40% of userbase)
+- Medium users: 1000-10000 requests/month (35% of userbase)
+- Heavy users: 10000+ requests/month (25% of userbase)
+</analysis>
+
+<recommendations>
+1. Basic Tier: $29/month
+   - Up to 1000 requests
+   - Basic support
+   
+2. Professional Tier: $99/month
+   - Up to 10000 requests
+   - Priority support
+   
+3. Enterprise Tier: Custom pricing
+   - Unlimited requests
+   - Dedicated support
+</recommendations>
+`} />
+
+## Best Practices
+
+1. **Regular Reviews**
+   - Run this analysis quarterly to stay current with usage patterns
+   - Compare recommendations against actual implementation results
+   - Update user data regularly for accurate insights
+
+2. **Implementation**
+   - Consider gradual rollout of new pricing
+   - Grandfather existing users if needed
+   - Prepare clear communication about pricing changes
+
+3. **Monitoring**
+   - Track support ticket volumes post-implementation
+   - Monitor user behavior changes
+   - Measure impact on revenue and customer satisfaction
+
+## Related Prompts
+
+- Customer Segmentation Analyzer
+- Support Ticket Pattern Analyzer
+- Revenue Impact Calculator
+- Customer Communication Template Generator
+
+Remember to always validate the AI's recommendations against your business goals and market conditions before implementing any pricing changes.
