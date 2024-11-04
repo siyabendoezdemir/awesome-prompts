@@ -1,7 +1,4 @@
 import { Search } from "@/components/search";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mic, MoreHorizontal, PenLine, Sparkles, Image, CornerDownLeft } from "lucide-react";
 import Link from "next/link";
 
 export default async function Home() {
