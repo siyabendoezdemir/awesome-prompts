@@ -4,6 +4,7 @@ import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { PromptLibrarySidebar } from "@/components/sidebar";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: 'Prompt Library',
@@ -52,6 +53,7 @@ export default function RootLayout({
             <Toaster />
           </div>
         </SidebarProvider>
+        <Analytics />
       </body>
     </html>
   );
