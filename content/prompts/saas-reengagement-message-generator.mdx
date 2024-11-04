@@ -1,0 +1,157 @@
+---
+title: "SaaS Re-engagement Message Generator"
+emoji: "🔄"
+category: "Customer Success"
+author: "Claude"
+created: "2024-11-04"
+---
+
+This prompt is designed to generate personalized re-engagement messages for inactive SaaS users. It creates motivational messages that encourage users to return to the platform while maintaining a friendly, non-pushy tone.
+
+## Prompt Structure
+
+<Prompt content={`
+You are an AI tasked with creating personalized progress reminders and motivational nudges for users who haven't logged into a SaaS platform for a certain period. Your goal is to craft a message that encourages the user to return to the platform and continue their progress.
+
+First, you will be provided with information about the SaaS platform:
+<saas_info>
+{{SAAS_INFO}}
+</saas_info>
+
+Next, you will receive information about the user:
+<user_info>
+{{USER_INFO}}
+</user_info>
+
+The number of days since the user's last login is:
+<days_since_login>
+{{DAYS_SINCE_LOGIN}}
+</days_since_login>
+
+Using this information, create a personalized reminder message for the user. Follow these guidelines:
+1. Address the user by their first name if available.
+2. Reference specific features or benefits of the SaaS platform that might interest the user based on their information.
+3. Mention the number of days since their last login, but frame it positively (e.g., "We've missed you!" rather than "You haven't logged in for X days").
+4. Include a specific call-to-action, encouraging them to log in and continue their progress.
+5. Keep the tone friendly, encouraging, and motivational without being pushy.
+6. Limit the message to 2-3 short paragraphs.
+
+Before writing the message, use the <scratchpad> tags to brainstorm key points you want to include based on the user and SaaS information provided.
+After your scratchpad, write your final message within <reminder_message> tags.
+
+Remember to personalize the message based on the user's information and the specific features of the SaaS platform. Do not include any placeholder text or variables in your final message - it should read as a complete, personalized message ready to be sent to the user.
+`} />
+
+## Variables
+
+The prompt uses three main variables that need to be replaced:
+
+1. `{{SAAS_INFO}}`: Information about the SaaS platform
+   - Should include: platform name, key features, unique selling points
+   - Example: "ProductivityPro is a task management platform featuring automated workflows, team collaboration tools, and advanced analytics"
+
+2. `{{USER_INFO}}`: User-specific information
+   - Should include: name, usage history, preferred features
+   - Example: "Name: John Smith; Most used features: workflow automation, team chat; Role: Project Manager"
+
+3. `{{DAYS_SINCE_LOGIN}}`: Numeric value
+   - Simple integer representing days since last login
+   - Example: "14"
+
+## XML Tags
+
+The prompt utilizes several XML-style tags for structure:
+
+- `<saas_info>`: Contains platform information
+- `<user_info>`: Contains user information
+- `<days_since_login>`: Contains inactivity duration
+- `<scratchpad>`: Used for brainstorming key message points
+- `<reminder_message>`: Contains the final message
+
+## Usage Tips
+
+1. **Platform Context**
+   - Provide comprehensive SAAS_INFO for better context
+   - Include unique features and benefits
+   - Mention any recent updates or improvements
+
+2. **User Personalization**
+   - Include detailed user information for better personalization
+   - Provide usage patterns and preferences
+   - Include any relevant team or project context
+
+3. **Message Optimization**
+   - Keep the inactivity period recent (7-30 days) for better engagement
+   - Include specific feature mentions
+   - Use positive framing consistently
+
+## Example Usage
+
+<Prompt content={`
+Input:
+<saas_info>
+ProductivityPro is a project management platform featuring automated workflows, team collaboration, and analytics dashboards. Recently launched features include AI-powered task prioritization and integrated time tracking.
+</saas_info>
+
+<user_info>
+Name: Sarah Johnson
+Role: Marketing Manager
+Most used features: Team collaboration, analytics dashboards
+Team size: 8 people
+</user_info>
+
+<days_since_login>
+12
+</days_since_login>
+
+Output:
+<scratchpad>
+- Address Sarah personally
+- Mention team collaboration impact
+- Reference analytics dashboard updates
+- Highlight new AI prioritization feature
+- Keep tone warm and welcoming
+</scratchpad>
+
+<reminder_message>
+Hi Sarah!
+
+We've missed seeing you and your team in ProductivityPro! Your marketing team's collaborative workspace is waiting for you, and we've added some exciting new features I think you'll love - especially our new AI-powered task prioritization system that can help streamline your team's workflow.
+
+Would you like to check out how your team's productivity metrics have evolved? Your analytics dashboard is ready with fresh insights. Jump back in today to keep your team's momentum going strong!
+
+Best regards,
+The ProductivityPro Team
+</reminder_message>
+`} />
+
+## Best Practices
+
+1. **Tone and Style**
+   - Maintain a friendly, professional tone
+   - Avoid negative language or guilt-tripping
+   - Keep messages concise and action-oriented
+
+2. **Personalization Depth**
+   - Reference specific user activities
+   - Mention team context when relevant
+   - Connect features to user's role
+
+3. **Call-to-Action**
+   - Include one clear, specific action
+   - Relate the action to user's goals
+   - Make it easy to take action
+
+## Common Mistakes to Avoid
+
+1. Overloading with too many features or updates
+2. Using a pushy or sales-heavy tone
+3. Neglecting to include specific, actionable next steps
+4. Making assumptions about why the user became inactive
+5. Using generic templates without proper personalization
+
+This prompt is particularly effective for:
+- SaaS platforms with regular user engagement
+- Products with team collaboration features
+- Platforms with measurable user progress
+- Services with frequent feature updates
