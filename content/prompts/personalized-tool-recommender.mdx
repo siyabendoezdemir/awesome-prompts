@@ -1,0 +1,166 @@
+---
+title: "Tool Recommendation System"
+emoji: "🛠️"
+category: "Personalization"
+author: "Siya"
+created: "2024-11-04"
+---
+
+This prompt creates a personalized tool recommendation system that analyzes user data and preferences to suggest relevant tools. It's designed to provide contextual, data-driven recommendations based on user behavior and stated preferences.
+
+## Overview
+
+The prompt creates an AI assistant that:
+- Analyzes user activity patterns
+- Considers category preferences
+- Reviews past interactions
+- Generates personalized tool recommendations
+- Provides detailed explanations for each suggestion
+
+## Prompt Structure
+
+<Prompt content={`You are an AI assistant tasked with generating personalized weekly tool recommendations for users based on their activity, category preferences, and past interactions. Your goal is to suggest tools that will be most relevant and useful to the user.
+
+First, review the list of available tools:
+<available_tools>
+{{AVAILABLE_TOOLS}}
+</available_tools>
+
+Now, consider the following user data:
+<user_activity>
+{{USER_ACTIVITY}}
+</user_activity>
+
+<category_preferences>
+{{CATEGORY_PREFERENCES}}
+</category_preferences>
+
+<past_interactions>
+{{PAST_INTERACTIONS}}
+</past_interactions>
+
+Analyze the provided data to understand the user's needs, preferences, and behavior patterns. Consider the following factors:
+1. Frequency of tool usage in different categories
+2. User's explicitly stated category preferences
+3. Tools the user has interacted with positively in the past
+4. Tools similar to those the user has found useful
+5. Any gaps in the user's current tool usage that could be filled with new recommendations
+
+Based on your analysis, generate a list of 3-5 tool recommendations for the user. For each recommendation, provide:
+1. The name of the tool
+2. A brief explanation of why you're recommending it
+3. How it relates to the user's activity, preferences, or past interactions
+
+Present your recommendations in the following format:
+<recommendations>
+<tool1>
+<name>[Tool Name]</name>
+<reason>[1-2 sentences explaining why you're recommending this tool]</reason>
+<relevance>[1 sentence relating the tool to user data]</relevance>
+</tool1>
+<tool2>
+<name>[Tool Name]</name>
+<reason>[1-2 sentences explaining why you're recommending this tool]</reason>
+<relevance>[1 sentence relating the tool to user data]</relevance>
+</tool2>
+[Continue for remaining tools...]
+</recommendations>
+
+After listing the recommendations, provide a brief summary explaining the overall strategy behind your selections:
+<summary>
+[2-3 sentences explaining your recommendation strategy and how it aligns with the user's needs and preferences]
+</summary>
+
+Remember to base your recommendations solely on the provided user data and available tools. Do not invent or assume any information not explicitly given in the input.`} />
+
+## Variables
+
+The prompt uses several key variables that need to be replaced:
+
+- `{{AVAILABLE_TOOLS}}`: List of tools that can be recommended
+- `{{USER_ACTIVITY}}`: Data about the user's tool usage and behavior
+- `{{CATEGORY_PREFERENCES}}`: User's stated category preferences
+- `{{PAST_INTERACTIONS}}`: History of user's previous tool interactions
+
+## Example Variable Values
+
+<Prompt content={`<available_tools>
+- Photoshop (Category: Design)
+- Trello (Category: Project Management)
+- Slack (Category: Communication)
+</available_tools>
+
+<user_activity>
+- Daily use of design tools
+- Weekly project management tool access
+- Limited communication tool usage
+</user_activity>
+
+<category_preferences>
+- Design: High priority
+- Project Management: Medium priority
+- Communication: Low priority
+</category_preferences>
+
+<past_interactions>
+- Positive feedback on Photoshop
+- Neutral experience with Trello
+- No interaction with Slack
+</past_interactions>`} />
+
+## Optimization Tips
+
+1. **Data Quality**
+   - Ensure user activity data is recent and comprehensive
+   - Include both positive and negative interactions
+   - Provide clear category preferences with priority levels
+
+2. **Tool Information**
+   - Include detailed tool descriptions
+   - Specify tool categories clearly
+   - List any prerequisites or requirements
+
+3. **Customization**
+   - Add weight factors for different types of user interactions
+   - Include tool pricing tiers if relevant
+   - Specify industry-specific tool categories
+
+4. **Output Format**
+   - Customize the recommendation format based on your needs
+   - Add additional fields like pricing or complexity level
+   - Include implementation suggestions
+
+## Use Cases
+
+1. **SaaS Product Recommendations**
+   - Suggest software tools based on user behavior
+   - Recommend complementary products
+   - Identify upgrade opportunities
+
+2. **Professional Development**
+   - Recommend learning resources
+   - Suggest skill-building tools
+   - Guide career development paths
+
+3. **Productivity Enhancement**
+   - Identify workflow optimization tools
+   - Suggest automation solutions
+   - Recommend collaboration platforms
+
+4. **Team Management**
+   - Suggest team coordination tools
+   - Recommend project management solutions
+   - Identify communication platform needs
+
+## Best Practices
+
+1. Keep recommendations focused and relevant
+2. Provide clear justification for each suggestion
+3. Base recommendations on actual user data
+4. Consider user's expertise level
+5. Account for tool compatibility
+6. Include implementation difficulty
+7. Consider budget constraints
+8. Respect user preferences
+
+This prompt can be customized further based on specific needs and can be integrated into various recommendation systems.
