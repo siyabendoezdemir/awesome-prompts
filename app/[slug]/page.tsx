@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const headersList = headers()
     const host = headersList.get('host') || ''
     const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
-    const currentUrl = `${protocol}://${host}/prompts/${params.slug}`
+    const currentUrl = `${protocol}://${host}/${params.slug}`
 
     return {
         title: prompt.title,
@@ -69,7 +69,7 @@ export default async function PromptPage({ params }: { params: { slug: string } 
     const headersList = headers()
     const host = headersList.get('host') || ''
     const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
-    const currentUrl = `${protocol}://${host}/prompts/${params.slug}`
+    const currentUrl = `${protocol}://${host}/${params.slug}`
 
     return (
         <div className="flex flex-col h-screen">
