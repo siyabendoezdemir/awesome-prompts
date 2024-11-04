@@ -13,9 +13,47 @@ import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Prompt } from "@/components/mdx/prompt"
 import { headers } from "next/headers"
 import { SharePopup } from "@/components/share-popup"
+import { Metadata } from "next"
 
 const components = {
     Prompt,
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const prompt = allPrompts.find(p => p._meta.path === params.slug)
+
+    if (!prompt) {
+        return {}
+    }
+
+    const headersList = headers()
+    const host = headersList.get('host') || ''
+    const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https'
+    const currentUrl = `${protocol}://${host}/prompts/${params.slug}`
+
+    return {
+        title: prompt.title,
+        description: `${prompt.title} - A prompt from the Prompt Library`,
+        openGraph: {
+            title: prompt.title,
+            description: `${prompt.title} - A prompt from the Prompt Library`,
+            url: currentUrl,
+            images: [
+                {
+                    url: `${protocol}://${host}/api/og?slug=${encodeURIComponent(params.slug)}`,
+                    width: 1200,
+                    height: 630,
+                    alt: prompt.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: prompt.title,
+            description: `${prompt.title} - A prompt from the Prompt Library`,
+            images: [`${protocol}://${host}/api/og?slug=${encodeURIComponent(params.slug)}`],
+        },
+    }
 }
 
 export default async function PromptPage({ params }: { params: { slug: string } }) {

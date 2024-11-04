@@ -1,0 +1,57 @@
+import { ImageResponse } from '@vercel/og'
+import { NextRequest } from 'next/server'
+
+export const runtime = 'edge'
+
+export async function GET(req: NextRequest) {
+    // Define colors
+    const bgColor = '#000'
+    const textColor = '#FFFFFF'
+    const promptColor = '#4EAA25'
+
+    return new ImageResponse(
+        (
+            <div
+                style={{
+                    height: '100%',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    justifyContent: 'flex-start',
+                    backgroundColor: bgColor,
+                    padding: '40px',
+                    fontFamily: 'monospace',
+                }}
+            >
+                {/* Terminal window top bar */}
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: '20px',
+                    width: '100%',
+                }}>
+                    <div style={{ width: '15px', height: '15px', borderRadius: '50%', backgroundColor: '#FF5F56', marginRight: '10px' }} />
+                    <div style={{ width: '15px', height: '15px', borderRadius: '50%', backgroundColor: '#FFBD2E', marginRight: '10px' }} />
+                    <div style={{ width: '15px', height: '15px', borderRadius: '50%', backgroundColor: '#27C93F' }} />
+                    <div style={{ flexGrow: 1, textAlign: 'center', color: textColor, fontSize: '24px', paddingLeft: '20px' }}>prompts.siya.digital</div>
+                </div>
+
+                {/* Terminal content */}
+                <div style={{ color: textColor, fontSize: '28px', marginBottom: '20px' }}>
+                    user@prompts:~$ website-info
+                </div>
+                <div style={{ color: promptColor, fontSize: '64px', fontWeight: 'bolder', wordWrap: 'break-word', maxWidth: '100%', marginBottom: '20px', marginTop: 'auto' }}>
+                    Prompt Library
+                </div>
+                <div style={{ color: textColor, fontSize: '28px' }}>
+                    A collection of AI prompts for various tasks
+                </div>
+            </div>
+        ),
+        {
+            width: 1200,
+            height: 630,
+        }
+    )
+}
