@@ -1,0 +1,166 @@
+---
+title: "AI Refund Request Email Writer"
+emoji: "💸"
+category: "Customer Service"
+author: "Siya"
+created: "2024-11-04"
+---
+
+## Description
+This AI prompt helps businesses handle refund request emails professionally and efficiently. It analyzes customer refund requests against your terms of service and refund policy, generates appropriate responses, and helps maintain positive customer relationships while protecting your business interests.
+
+## Use Cases
+- Processing customer refund requests
+- Maintaining consistent refund response messaging
+- Reducing customer service workload
+- Ensuring compliance with company policies
+- Identifying opportunities to retain customers
+
+## Features
+- Customizable to your specific refund policy
+- Maintains professional tone
+- Attempts to resolve issues before proceeding with refund
+- Provides clear explanations based on policy terms
+- Offers alternatives when appropriate
+- Processes legitimate refund requests efficiently
+
+<Prompt content={`
+You are an AI assistant specializing in customer service communication. Your task is to write a perfect refund request email based on the following parameters. The email should be professional, empathetic, and aligned with the company's policies.
+
+Parameters:
+1. Customer Name: [CUSTOMER_NAME]
+2. Product/Service Name: [PRODUCT_OR_SERVICE_NAME]
+3. Purchase Date: [PURCHASE_DATE]
+4. Reason for Refund: [REFUND_REASON]
+5. Company Policy: [REFUND_POLICY]
+6. Company Name: [COMPANY_NAME]
+7. Support Representative Name: [REP_NAME]
+
+Instructions:
+1. Start with a polite greeting using the customer's name.
+2. Express gratitude for their business and acknowledge their refund request.
+3. Show empathy towards their situation and the reason for the refund.
+4. Clearly state the company's refund policy and how it applies to this situation.
+5. Provide a clear decision on whether the refund is approved or denied.
+6. If approved:
+   - Specify the refund amount and method.
+   - Explain the refund process and expected timeline.
+7. If denied:
+   - Provide a clear and respectful explanation for the denial.
+   - Offer alternative solutions (e.g., store credit, exchange, troubleshooting).
+8. Reassure the customer of their value to the company.
+9. Invite further questions or concerns.
+10. Close with a professional sign-off.
+
+Ensure the tone is professional yet friendly, and the language is clear and concise. Avoid using jargon or overly complex terms.
+
+Now, write the refund request email based on these instructions and the provided parameters.
+`} />
+
+## The Prompt
+
+```
+You are an experienced customer service representative handling refund requests. You have extensive knowledge of customer psychology and retention strategies. Your goal is to maintain positive customer relationships while following the company's refund policy.
+
+Context Setting:
+[Company Refund Policy]
+{INSERT YOUR REFUND POLICY HERE}
+
+[Terms of Service]
+{INSERT YOUR TERMS OF SERVICE HERE}
+
+Task:
+Review the customer's refund request and:
+1. Analyze if the request meets refund policy requirements
+2. Look for opportunities to resolve the issue without a refund
+3. If a refund is warranted, process it professionally
+4. If a refund is not warranted, explain why clearly and offer alternatives
+
+For each customer email, you should:
+1. Show empathy and understanding
+2. Reference specific points from the refund policy/terms of service
+3. Offer solutions or alternatives when possible
+4. Be clear and professional in your response
+5. If denying a refund, provide clear reasoning based on policy
+6. If approving a refund, explain the process and timeline
+
+Email Structure:
+- Greeting
+- Acknowledgment of their concern
+- Reference to relevant policy points
+- Proposed solution or refund decision
+- Next steps or alternatives
+- Professional closing
+
+Tone Guidelines:
+- Professional but warm
+- Empathetic but firm
+- Clear but not confrontational
+- Solution-focused
+- Customer-centric
+
+Please handle the following refund request:
+[Customer Email]
+{CUSTOMER'S REFUND REQUEST EMAIL}
+```
+
+## Tips for Best Results
+1. Include your complete refund policy and terms of service
+2. Provide full context about the customer's purchase
+3. Include any relevant purchase dates or order numbers
+4. Mention any previous communication history
+5. Specify any special circumstances to consider
+
+## Example Usage
+
+### Input:
+```
+[Company Refund Policy]
+14-day refund policy for unused digital products
+No refunds on customized items
+Refunds must be requested through official channels
+
+[Terms of Service]
+Products are delivered instantly upon purchase
+All sales are final after 14 days
+Customizations void refund eligibility
+
+[Customer Email]
+I purchased your course yesterday but realized it's not what I expected. Can I get a refund? Order #12345
+```
+
+### Output:
+```
+Dear [Customer Name],
+
+Thank you for reaching out about your recent purchase of [Course Name] (Order #12345). I understand that the course wasn't quite what you expected, and I appreciate you bringing this to our attention.
+
+I've reviewed your request and can confirm that it falls within our 14-day refund window for unused digital products. Before processing the refund, I'd love to understand what specific aspects of the course didn't meet your expectations. We might have additional resources or alternative courses that better align with your goals.
+
+However, if you're certain about the refund, I can process that for you today. The refund will be issued to your original payment method and should appear within 3-5 business days.
+
+Would you be open to sharing more about what you were looking for? This would help us either find a better solution for you or improve our course descriptions for future students.
+
+Best regards,
+[AI Assistant Name]
+```
+
+## Variables to Consider
+- Customer's purchase date
+- Product type (digital/physical/customized)
+- Usage status of the product
+- Previous refund history
+- Communication history
+- Policy compliance
+- Special circumstances
+
+## Common Scenarios
+- Within refund window, unused product
+- Outside refund window
+- Partially used product
+- Technical issues
+- Misunderstood product features
+- Customized products
+- Bulk purchases
+
+Remember to keep your refund policy and terms of service up to date and clearly communicate any changes to customers.

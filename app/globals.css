@@ -2,21 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +10,89 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 10%; /* #191919 */
+    --foreground: 0, 0%, 83%; /* #cecbc6 */
+    --card: 0 0% 3.9%;
+    --card-foreground: 36 6% 80%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 36 6% 80%;
+    --primary: 36 6% 80%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 36 6% 80%;
+    --muted: 0, 0%, 13%;
+    --muted-foreground: 36 6% 60%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 36 6% 80%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 36 6% 80%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 36 6% 80%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 0 0% 12.5%; /* #202020 */
+    --sidebar-foreground: 36 6% 80%; /* #cecbc6 */
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 36 6% 80%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 36 6% 80%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Notion-like scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--accent-foreground)) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted));
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground));
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
