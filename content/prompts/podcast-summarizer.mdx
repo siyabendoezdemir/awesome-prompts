@@ -1,0 +1,114 @@
+---
+title: "Podcast Episode Summary Generator"
+emoji: "🎙️"
+category: "Content Creation"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt helps generate engaging and concise podcast episode summaries optimized for marketing materials, email newsletters, and social media posts. It provides a structured approach to distilling lengthy podcast transcripts into compelling 50-75 word summaries that capture the essence of each episode while enticing potential listeners.
+
+## Use Cases
+
+- Creating episode descriptions for podcast platforms
+- Writing newsletter content about new episodes
+- Generating social media copy
+- Updating website episode listings
+- Crafting marketing materials for podcast episodes
+
+## Prompt Structure
+
+The prompt uses several XML-style tags to organize input data:
+
+- `<episode_title>` - Contains the title of the podcast episode
+- `<episode_number>` - Specifies the episode number
+- `<podcast_transcript>` - Houses the full episode transcript
+- `<summary>` - Used to wrap the generated summary
+
+## Variables
+
+The prompt contains three main variables that should be replaced:
+
+- `{{EPISODE_TITLE}}` - Replace with the actual episode title
+- `{{EPISODE_NUMBER}}` - Replace with the numerical episode number
+- `{{PODCAST_TRANSCRIPT}}` - Replace with the full episode transcript
+
+## Optimization Tips
+
+1. **Transcript Quality**: Ensure the transcript is clean and properly formatted for best results
+
+2. **Length Control**: The 50-75 word limit helps maintain consistency across summaries
+
+3. **Example Customization**: Consider updating the example summaries to match your podcast's style and tone
+
+4. **Tag Usage**: Always maintain the XML-style tags as they help structure the input and output
+
+5. **Audience Focus**: The prompt emphasizes considering the target audience when crafting summaries
+
+## The Prompt
+
+<Prompt content={`You are an AI assistant tasked with generating concise and engaging episode summaries for podcasts. These summaries will be used for marketing emails, website listings, and social media posts. Your goal is to create a brief, compelling description that captures the essence of the episode and entices potential listeners.
+You will be provided with the following information:
+<episode_title>{{EPISODE_TITLE}}</episode_title>
+<episode_number>{{EPISODE_NUMBER}}</episode_number>
+<podcast_transcript>
+{{PODCAST_TRANSCRIPT}}
+</podcast_transcript>
+To create an effective episode summary, follow these steps:
+1. Carefully read through the podcast transcript.
+2. Identify the main topic or theme of the episode.
+3. Note any key points, interesting discussions, or notable guests.
+4. Consider the target audience and what would appeal to them.
+5. Craft a summary that is informative, engaging, and concise.
+Your summary should be between 50-75 words long and should be written in a style that is appropriate for marketing purposes. It should give potential listeners a clear idea of what the episode is about while also piquing their interest.
+Include the following elements in your summary:
+- A hook or attention-grabbing opening sentence
+- The main topic or theme of the episode
+- One or two key points or highlights
+- If applicable, mention any notable guests
+Do not include the episode number or title in your summary, as these will be displayed separately.
+Here are two examples of well-crafted episode summaries:
+<example>
+Dive into the fascinating world of artificial intelligence as we explore its impact on modern healthcare. Dr. Jane Smith, a leading AI researcher, discusses groundbreaking applications in diagnosis and treatment. Discover how machine learning is revolutionizing patient care and the ethical considerations surrounding these technological advancements.
+</example>
+<example>
+Uncover the secrets of successful entrepreneurship with tech mogul John Doe. From his humble beginnings to building a multi-billion dollar empire, John shares invaluable insights on innovation, leadership, and perseverance. Learn practical strategies for overcoming business challenges and staying ahead in today's competitive market.
+</example>
+Remember to maintain a positive and enthusiastic tone throughout the summary. Your goal is to inform and excite potential listeners about the episode's content.
+Please provide your episode summary within <summary> tags.`} />
+
+## Example Output
+
+<Prompt content={`<summary>
+Journey into the world of sustainable architecture with renowned designer Sarah Chen. Explore innovative solutions for eco-friendly buildings and discover how modern design is combating climate change. Learn about breakthrough materials and construction techniques that are reshaping our urban landscapes while reducing environmental impact.
+</summary>`} />
+
+## Best Practices
+
+1. **Maintain Consistency**: Use the same tone and style across all episode summaries
+
+2. **Focus on Benefits**: Highlight what listeners will learn or gain from the episode
+
+3. **Use Active Voice**: Keep the language dynamic and engaging
+
+4. **Include Keywords**: Incorporate relevant keywords for SEO purposes
+
+5. **Test and Iterate**: Regularly assess which summary styles perform best with your audience
+
+## Error Handling
+
+The prompt includes clear formatting instructions and examples to minimize errors. However, watch out for:
+
+- Summaries exceeding the 75-word limit
+- Missing required elements from the summary structure
+- Incorrect tag usage
+- Overly technical or complex language
+
+## Related Prompts
+
+- Social Media Post Generator
+- Email Newsletter Writer
+- Content Marketing Copywriter
+- Video Description Generator
