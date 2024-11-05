@@ -1,0 +1,188 @@
+---
+title: "Social Media Post Generator"
+emoji: "📱"
+category: "Marketing"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt helps generate engaging social media posts for app launches across Twitter, Facebook, and Instagram. It creates platform-specific content that highlights app features and benefits while maintaining appropriate character limits and platform conventions.
+
+## Use Cases
+
+- App developers launching new applications
+- Marketing teams creating social media campaigns
+- Social media managers planning content calendars
+- Startups promoting their mobile applications
+- Product teams announcing new app features
+
+## Variables
+
+The prompt uses several variables that should be replaced with your specific app information:
+
+- `{{APP_NAME}}` - The name of your application
+- `{{APP_DESCRIPTION}}` - A brief description of what your app does
+- `{{APP_FEATURES}}` - List of key features and benefits
+- `{{APP_STORE_LINK}}` - Direct link to download the app
+
+## Optimization Tips
+
+1. **App Description**
+   - Keep it concise but compelling
+   - Focus on the main value proposition
+   - Use clear, non-technical language
+
+2. **Features List**
+   - Prioritize 3-5 most important features
+   - Include unique selling points
+   - Highlight user benefits over technical specifications
+
+3. **Platform Customization**
+   - Twitter posts will be most effective when kept around 230-250 characters to allow for link sharing
+   - Facebook posts can include more technical details
+   - Instagram posts should focus on visual aspects and lifestyle benefits
+
+## The Prompt
+
+<Prompt content={`You are an AI assistant tasked with generating social media post suggestions to help app developers promote their newly launched app. Your goal is to create engaging, informative, and shareable content for various social media platforms.
+
+You will be provided with the following information about the app:
+<app_name>
+{{APP_NAME}}
+</app_name>
+<app_description>
+{{APP_DESCRIPTION}}
+</app_description>
+<app_features>
+{{APP_FEATURES}}
+</app_features>
+<app_store_link>
+{{APP_STORE_LINK}}
+</app_store_link>
+
+Using this information, generate three social media post suggestions each for Twitter, Facebook, and Instagram. Follow these guidelines:
+1. Keep the tone friendly, exciting, and informative.
+2. Highlight key features and benefits of the app.
+3. Use appropriate hashtags for each platform.
+4. Include a call-to-action (CTA) encouraging users to download the app.
+5. For Twitter, ensure the post is within the 280-character limit.
+6. For Facebook and Instagram, create slightly longer posts with more details.
+7. Incorporate emojis where appropriate to increase engagement.
+
+When generating hashtags:
+1. Include 2-3 relevant hashtags for Twitter posts.
+2. Use 3-5 hashtags for Facebook and Instagram posts.
+3. Mix popular and specific hashtags related to the app's category and features.
+4. Always include a branded hashtag using the app name.
+
+Present your output in the following format:
+<social_media_suggestions>
+  <twitter>
+    <post1>
+      [Twitter post content 1]
+    </post1>
+    <post2>
+      [Twitter post content 2]
+    </post2>
+    <post3>
+      [Twitter post content 3]
+    </post3>
+  </twitter>
+  
+  <facebook>
+    <post1>
+      [Facebook post content 1]
+    </post1>
+    <post2>
+      [Facebook post content 2]
+    </post2>
+    <post3>
+      [Facebook post content 3]
+    </post3>
+  </facebook>
+  
+  <instagram>
+    <post1>
+      [Instagram post content 1]
+    </post1>
+    <post2>
+      [Instagram post content 2]
+    </post2>
+    <post3>
+      [Instagram post content 3]
+    </post3>
+  </instagram>
+</social_media_suggestions>`} />
+
+## Example Usage
+
+Here's an example of how to use this prompt with a fictional app:
+
+<Prompt content={`<app_name>
+FitTrack Pro
+</app_name>
+
+<app_description>
+A comprehensive fitness tracking app that uses AI to create personalized workout plans and track progress in real-time.
+</app_description>
+
+<app_features>
+- AI-powered workout recommendations
+- Real-time exercise form feedback
+- Progress tracking with visual graphs
+- Integration with all major fitness wearables
+- Social community features
+</app_features>
+
+<app_store_link>
+https://example.com/fittrack-pro
+</app_store_link>`} />
+
+## Output Format
+
+The prompt will generate structured content in XML format, making it easy to identify posts for each platform:
+
+<Prompt content={`<social_media_suggestions>
+  <twitter>
+    <post1>
+      🎯 Transform your fitness journey with FitTrack Pro! Get AI-powered workouts tailored just for you. Download now and start crushing your goals! 💪 
+      https://example.com/fittrack-pro
+      #FitTrackPro #FitnessApp #WorkoutTech
+    </post1>
+  </twitter>
+  ...
+</social_media_suggestions>`} />
+
+## Best Practices
+
+1. **Content Variation**
+   - Ensure each post highlights different features
+   - Vary the tone and approach across platforms
+   - Use different CTAs to test engagement
+
+2. **Hashtag Strategy**
+   - Research trending hashtags in your app category
+   - Create a unique branded hashtag
+   - Avoid hashtag stuffing, especially on Twitter
+
+3. **Platform Optimization**
+   - Twitter: Focus on quick, punchy messages
+   - Facebook: Emphasize community and detailed features
+   - Instagram: Highlight visual aspects and lifestyle benefits
+
+## Technical Notes
+
+- The prompt uses XML-style tags for clear structure
+- All platform-specific posts are grouped together
+- Character limits are automatically enforced for Twitter
+- Emoji usage is encouraged but not mandatory
+
+## Common Mistakes to Avoid
+
+1. Exceeding Twitter's character limit
+2. Using too many hashtags on Twitter
+3. Creating identical posts across platforms
+4. Forgetting to include the app store link
+5. Not adapting the tone for each platform
