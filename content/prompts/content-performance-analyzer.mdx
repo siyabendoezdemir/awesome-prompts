@@ -1,0 +1,125 @@
+---
+title: "Content Performance Analysis Guide"
+emoji: "📊"
+category: "Analytics"
+author: "Siya"
+created: "2024-11-05"
+---
+
+The Content Performance Analysis prompt helps analyze and interpret engagement metrics across different content types to optimize content strategy. It provides structured insights about which content formats drive the most engagement and how to improve content performance.
+
+## Key Features
+
+- Comprehensive analysis of different content types (threads, polls, media)
+- Calculation of average engagement metrics
+- Performance comparison across content formats
+- Trend identification and actionable insights
+- Structured XML output format
+
+## Core Prompt
+
+<Prompt content={`You will be analyzing content performance data to summarize which types of posts (threads, polls, media) are driving the most engagement. This analysis will provide users with insights into effective content strategies.
+You will be given content performance data in the following format:
+<content_performance_data>
+{{CONTENT_PERFORMANCE_DATA}}
+</content_performance_data>
+Follow these steps to analyze the data and provide insights:
+1. Analyze the data:
+   - Identify the different types of content (threads, polls, media)
+   - For each content type, calculate the average engagement metrics (likes, comments, shares, etc.)
+2. Summarize engagement metrics:
+   - Create a summary of average engagement metrics for each content type
+   - Identify the highest and lowest performing metrics for each type
+3. Compare performance:
+   - Determine which content type is performing best overall
+   - Identify any content types that excel in specific engagement metrics
+4. Identify trends and provide insights:
+   - Look for patterns or trends in the data
+   - Consider factors that might contribute to higher engagement for certain content types
+   - Formulate actionable insights for users to improve their content strategy
+5. Format your output:
+   Present your analysis and insights in the following structure, using appropriate XML tags:
+   <analysis>
+   <summary>
+   Provide a brief overview of the content performance analysis.
+   </summary>
+   <engagement_metrics>
+   List the average engagement metrics for each content type.
+   </engagement_metrics>
+   <performance_comparison>
+   Compare the performance of different content types, highlighting the best-performing type overall and any types that excel in specific metrics.
+   </performance_comparison>
+   <trends_and_insights>
+   Describe any notable trends or patterns in the data and provide actionable insights for users to improve their content strategy.
+   </trends_and_insights>
+   </analysis>`} />
+
+## Variables
+
+The prompt contains one main variable that needs to be replaced:
+
+- `{{CONTENT_PERFORMANCE_DATA}}`: The actual performance metrics data that needs to be analyzed. This should be provided in a consistent format containing metrics for different content types.
+
+## Usage Tips
+
+1. **Data Formatting**
+   - Ensure the input data is properly formatted and contains all necessary metrics
+   - Include data for all content types being compared
+   - Make sure metrics are consistent across content types
+
+2. **Customization Options**
+   - Add specific metrics relevant to your platform
+   - Modify the time period for analysis
+   - Include additional content types as needed
+
+3. **Output Optimization**
+   - Use clear, specific numbers in the analysis
+   - Include percentage changes where relevant
+   - Provide context for the metrics
+   - Make actionable recommendations based on the data
+
+## Best Practices
+
+- **Data Preparation**: Clean and normalize data before analysis
+- **Metric Selection**: Focus on metrics that align with business goals
+- **Trend Analysis**: Look for patterns across different time periods
+- **Actionable Insights**: Provide specific recommendations for improvement
+- **Clear Communication**: Present findings in a clear, structured format
+
+## Example Implementation
+
+Here's how the prompt might be used with sample data:
+
+<Prompt content={`<content_performance_data>
+threads:
+  - likes: 150
+  - comments: 45
+  - shares: 25
+polls:
+  - votes: 300
+  - comments: 30
+  - shares: 15
+media:
+  - views: 500
+  - likes: 200
+  - shares: 40
+</content_performance_data>`} />
+
+This structure allows for consistent analysis across different content types while maintaining flexibility for various metrics.
+
+## Common Pitfalls to Avoid
+
+- Don't overlook outliers in the data
+- Avoid making assumptions about causation
+- Don't ignore platform-specific context
+- Remember to consider audience demographics
+- Don't skip over underperforming metrics
+
+## Related Applications
+
+This prompt can be adapted for:
+- Social media performance analysis
+- Blog content optimization
+- Email marketing analytics
+- Video content performance
+- Community engagement metrics
