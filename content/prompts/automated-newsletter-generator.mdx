@@ -1,0 +1,162 @@
+---
+title: "Automated Newsletter Generator"
+emoji: "📰"
+category: "Content Creation"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt helps generate structured, engaging newsletters by analyzing website content and maintaining consistency with previous communications. It's designed to create newsletters that are informative, well-organized, and aligned with your brand's voice.
+
+## Use Cases
+
+- Company newsletters
+- Product updates
+- Industry news roundups
+- Community engagement updates
+- Educational content digests
+- Marketing campaigns
+
+## Variables
+
+The prompt uses three main variables that should be replaced with your content:
+
+- `{{WEBSITE_CONTENT}}`: The current content from your website that will be used as source material
+- `{{NEWSLETTER_TOPIC}}`: The specific focus area for this newsletter edition
+- `{{PREVIOUS_NEWSLETTERS}}`: Past newsletters for maintaining style consistency
+
+## Optimization Tips
+
+1. **Website Content Preparation**
+   - Organize your website content hierarchically
+   - Tag important updates and announcements
+   - Include relevant metrics or statistics
+   - Highlight new features or changes
+
+2. **Topic Selection**
+   - Choose specific, focused topics
+   - Align with current trends or events
+   - Consider your audience's interests
+   - Plan topics in advance for content continuity
+
+3. **Previous Newsletter Analysis**
+   - Review engagement metrics
+   - Note successful content patterns
+   - Identify popular sections
+   - Track topic progression
+
+## The Prompt
+
+<Prompt content={`You are tasked with automating the creation of a newsletter for a website. Your goal is to create engaging content that highlights key information, trends, and user tips related to the website's focus area. Follow these instructions carefully to generate a well-structured and informative newsletter.
+
+First, review the website content provided:
+<website_content>
+{{WEBSITE_CONTENT}}
+</website_content>
+
+The newsletter will focus on the following topic:
+<newsletter_topic>
+{{NEWSLETTER_TOPIC}}
+</newsletter_topic>
+
+For reference, here are previous newsletters that have been sent out:
+<previous_newsletters>
+{{PREVIOUS_NEWSLETTERS}}
+</previous_newsletters>
+
+Create a newsletter with the following structure:
+1. Introduction (2-3 sentences)
+2. Main Feature (1-2 paragraphs)
+3. Industry Trends (2-3 bullet points)
+4. User Tips (2-3 short paragraphs)
+5. Conclusion (1-2 sentences)
+
+When creating the content:
+1. Use the website_content to extract relevant information for each section.
+2. Ensure the main feature aligns with the newsletter_topic.
+3. Identify current trends in the industry based on the website content and your analysis.
+4. Provide practical and valuable tips for users of the website or its services.
+5. Maintain continuity with previous_newsletters in terms of style and recurring sections, but avoid repeating content.
+
+Guidelines for tone and style:
+1. Write in a friendly, conversational tone.
+2. Use clear and concise language.
+3. Avoid jargon unless it's commonly understood by the target audience.
+4. Include a call-to-action where appropriate (e.g., "Visit our website for more information").
+
+Formatting and length:
+1. Keep the total newsletter length between 400-600 words.
+2. Use subheadings to separate each section.
+3. Include bullet points for easy readability where appropriate.
+
+Please provide your generated newsletter content within <newsletter_content> tags. Ensure that each section of the newsletter is clearly labeled with appropriate subheadings.`} />
+
+## Output Structure
+
+The generated newsletter will follow this format:
+
+<Prompt content={`<newsletter_content>
+## [Newsletter Title]
+
+[Introduction]
+
+## Main Feature
+[Main feature content]
+
+## Industry Trends
+• [Trend 1]
+• [Trend 2]
+• [Trend 3]
+
+## User Tips
+[User tips content]
+
+## Conclusion
+[Concluding message and call-to-action]
+</newsletter_content>`} />
+
+## Tips for Best Results
+
+1. **Content Organization**
+   - Provide comprehensive website content
+   - Include recent updates and changes
+   - Highlight key metrics or achievements
+   - Tag important announcements
+
+2. **Topic Definition**
+   - Be specific with the newsletter topic
+   - Provide context if needed
+   - Include any relevant timelines
+   - Specify target audience if different from usual
+
+3. **Historical Context**
+   - Include 2-3 recent newsletters
+   - Highlight any recurring sections
+   - Note any specific style guidelines
+   - Mention successful content types
+
+4. **Additional Considerations**
+   - Set clear word count expectations
+   - Specify any required formatting
+   - Include branding guidelines
+   - Note any content restrictions
+
+## Common Issues and Solutions
+
+1. **Inconsistent Tone**
+   - Solution: Provide example phrases or style guide
+   - Include tone descriptors (formal, casual, technical)
+
+2. **Content Repetition**
+   - Solution: Clearly mark covered topics in previous newsletters
+   - Maintain a content calendar
+
+3. **Unclear Focus**
+   - Solution: Define specific goals for each newsletter
+   - Provide clear topic hierarchies
+
+4. **Length Management**
+   - Solution: Specify word counts for each section
+   - Use clear formatting guidelines
