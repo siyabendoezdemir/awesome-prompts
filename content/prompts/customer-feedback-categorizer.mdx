@@ -1,0 +1,115 @@
+---
+title: "Customer Feedback Categorization System"
+emoji: "📊"
+category: "Customer Service"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt creates a structured system for analyzing and categorizing customer feedback based on sentiment and topics. It helps maintain consistency in feedback analysis and provides clear justification for categorizations.
+
+## Key Features
+
+- Sentiment analysis (Positive, Negative, Neutral)
+- Topic categorization (Product, Service, Support)
+- Structured XML output format
+- Built-in justification requirement
+- Example-based learning
+
+## Prompt Template
+
+<Prompt content={`You are an AI assistant tasked with categorizing customer feedback. Your job is to analyze the given feedback and categorize it based on sentiment and topic. Here's how to proceed:
+1. First, you will be presented with a piece of customer feedback:
+<customer_feedback>
+{{CUSTOMER_FEEDBACK}}
+</customer_feedback>
+2. Analyze the sentiment of the feedback. Determine if it is:
+   - Positive
+   - Negative
+   - Neutral
+   Consider the overall tone, language used, and any explicit statements of satisfaction or dissatisfaction.
+3. Identify the main topic(s) of the feedback. The primary categories are:
+   - Product: relating to the features, quality, or performance of the product
+   - Service: relating to customer service, delivery, or overall customer experience
+   - Support: relating to technical support, troubleshooting, or assistance
+   Note that a piece of feedback may touch on multiple topics. In such cases, identify all relevant topics.
+4. After your analysis, present your categorization in the following format:
+<categorization>
+<sentiment>[Insert sentiment here: Positive, Negative, or Neutral]</sentiment>
+<topics>
+<topic>[Insert first identified topic]</topic>
+<topic>[Insert second identified topic, if applicable]</topic>
+</topics>
+<justification>
+[Provide a brief explanation for your categorization, referencing specific parts of the feedback]
+</justification>
+</categorization>`} />
+
+## Variables
+
+The prompt contains one main variable:
+
+- `{{CUSTOMER_FEEDBACK}}`: The customer feedback text to be analyzed
+
+## Example Usage
+
+Here's an example of how to use this prompt:
+
+<Prompt content={`<customer_feedback>
+I love my new smartphone! The camera quality is amazing and the battery lasts all day. However, I had some trouble setting it up and customer support wasn't very helpful.
+</customer_feedback>
+<categorization>
+<sentiment>Positive</sentiment>
+<topics>
+<topic>Product</topic>
+<topic>Support</topic>
+</topics>
+<justification>
+The feedback is primarily positive, with the customer expressing love for the product and praising specific features (camera and battery). However, there is a negative aspect related to the setup process and customer support, which is why "Support" is also included as a topic.
+</justification>
+</categorization>`} />
+
+## Optimization Tips
+
+1. **Clear Feedback Text**: Ensure the customer feedback is clearly formatted and complete before insertion into the prompt.
+
+2. **Multiple Topics**: Remember that feedback can be categorized under multiple topics - don't limit to just one if multiple are relevant.
+
+3. **Balanced Analysis**: When providing justification, reference both positive and negative aspects if present.
+
+4. **Consistent Format**: Always maintain the XML structure for easy parsing and standardization.
+
+## Best Practices
+
+- Always include specific references from the feedback in the justification
+- Consider the overall context when determining sentiment
+- Be thorough in topic identification
+- Maintain consistent XML formatting
+- Provide clear reasoning in the justification section
+
+## Use Cases
+
+- Customer service feedback analysis
+- Product review categorization
+- Support ticket triage
+- Customer satisfaction monitoring
+- Feedback trend analysis
+- Quality assurance reviews
+
+## Technical Details
+
+The prompt uses a structured XML format for output, which makes it ideal for:
+
+- Integration with automated systems
+- Database storage
+- Analytics processing
+- Report generation
+- Trend analysis
+
+## Limitations
+
+- Limited to three main topic categories
+- Three-tier sentiment classification may not capture nuanced feedback
+- Does not account for mixed sentiment within individual topics
