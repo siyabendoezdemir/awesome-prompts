@@ -1,0 +1,147 @@
+---
+title: "Weekly Meal Planner"
+emoji: "🍽️"
+category: "Health & Wellness"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt transforms an AI assistant into a personalized meal planning expert that creates weekly meal plans tailored to individual preferences and dietary requirements. The prompt is structured to ensure comprehensive analysis of user needs while maintaining nutritional balance and meal variety.
+
+## Key Features
+
+- Personalized meal planning based on user preferences
+- Strict adherence to dietary restrictions and allergies
+- Balanced nutrition across all meals
+- Variety in cuisines and cooking methods
+- Alternative meal suggestions for flexibility
+- Detailed explanation of how the plan meets user needs
+
+## Variables
+
+The prompt uses three main variable sections:
+
+1. `{{USER_PREFERENCES}}`: Contains the user's food preferences, favorite cuisines, cooking skill level, and time constraints
+2. `{{DIETARY_RESTRICTIONS}}`: Lists allergies, intolerances, and specific dietary requirements (e.g., vegetarian, keto)
+3. `{{MEAL_DATABASE}}`: Reference database of meals with nutritional information and ingredients
+
+## The Prompt
+
+<Prompt content={`You are an AI assistant tasked with creating a personalized weekly meal plan based on user preferences and dietary restrictions. Your goal is to generate a balanced, varied, and appealing meal plan that adheres to the user's needs and preferences.
+
+First, review the user's preferences and dietary restrictions:
+<user_preferences>
+{{USER_PREFERENCES}}
+</user_preferences>
+<dietary_restrictions>
+{{DIETARY_RESTRICTIONS}}
+</dietary_restrictions>
+
+You have access to a database of meals with their nutritional information and ingredients:
+<meal_database>
+{{MEAL_DATABASE}}
+</meal_database>
+
+To create the personalized weekly meal plan, follow these steps:
+
+1. Analyze the user preferences and dietary restrictions carefully. Pay attention to any allergies, intolerances, or specific dietary needs (e.g., vegetarian, low-carb, gluten-free).
+
+2. Review the meal database and select appropriate meals that align with the user's preferences and restrictions. Ensure a good variety of meals throughout the week, including different cuisines and cooking methods.
+
+3. Create a balanced meal plan for 7 days, including breakfast, lunch, dinner, and 1-2 snacks per day. Aim for a mix of proteins, carbohydrates, and healthy fats in each meal.
+
+4. When selecting meals, consider:
+   - Nutritional balance
+   - Variety in flavors and textures
+   - Seasonal ingredients
+   - Preparation time and complexity
+   - Any specific calorie or macronutrient goals mentioned in the user preferences
+
+5. Present the meal plan in the following format:
+<meal_plan>
+Day 1:
+- Breakfast: [Meal Name]
+- Snack: [Snack Name]
+- Lunch: [Meal Name]
+- Snack: [Snack Name]
+- Dinner: [Meal Name]
+[Repeat for Days 2-7]
+</meal_plan>
+
+6. After the meal plan, provide a brief explanation of how the plan meets the user's preferences and dietary needs. Include this explanation in <explanation> tags.
+
+7. Suggest 3-5 alternative meals that could be substituted into the plan if the user wants variety. List these alternatives in <alternatives> tags.
+
+8. If there are any potential conflicts between the user's preferences and dietary restrictions, or if certain preferences cannot be fully met, explain this in <notes> tags after the alternatives.
+
+Remember to be creative and thoughtful in your meal selections while strictly adhering to the user's dietary restrictions and preferences. If you're unsure about a particular meal's suitability, err on the side of caution and choose an alternative.`} />
+
+## How to Use
+
+1. Replace `{{USER_PREFERENCES}}` with specific preferences such as:
+   - Favorite cuisines
+   - Preferred cooking methods
+   - Time available for meal preparation
+   - Calorie or macro goals
+   - Budget constraints
+
+2. Fill in `{{DIETARY_RESTRICTIONS}}` with:
+   - Food allergies
+   - Intolerances
+   - Dietary choices (vegan, vegetarian, etc.)
+   - Religious dietary restrictions
+   - Medical dietary requirements
+
+3. Ensure `{{MEAL_DATABASE}}` contains:
+   - Meal names
+   - Ingredients lists
+   - Nutritional information
+   - Preparation time
+   - Cooking difficulty
+
+## Optimization Tips
+
+1. **Be Specific with Preferences**: The more detailed the user preferences, the better tailored the meal plan will be.
+
+2. **Prioritize Restrictions**: Always prioritize dietary restrictions over preferences to ensure safety and compliance.
+
+3. **Consider Seasonality**: Mention preferred seasonal ingredients or seasonal restrictions in the user preferences.
+
+4. **Time Management**: Include specific time constraints for different days if meal prep time varies throughout the week.
+
+5. **Meal Complexity**: Specify if simpler meals are needed on certain days or if batch cooking is preferred.
+
+## Example Input
+
+<Prompt content={`<user_preferences>
+- Enjoys Asian and Mediterranean cuisines
+- Prefers quick breakfast options
+- Maximum 30 minutes prep time for weekday dinners
+- Likes meal prep for lunches
+- Target: 2000 calories per day
+</user_preferences>
+
+<dietary_restrictions>
+- Gluten intolerant
+- No shellfish
+- Lactose sensitive
+</dietary_restrictions>`} />
+
+## Output Format
+
+The AI will provide:
+1. A structured 7-day meal plan
+2. Explanation of how the plan meets requirements
+3. Alternative meal suggestions
+4. Notes about any preference-restriction conflicts
+
+## Common Use Cases
+
+- Weekly meal planning for families
+- Meal prep planning for busy professionals
+- Special diet meal planning (keto, paleo, etc.)
+- Athletic nutrition planning
+- Weight management meal planning
+- Medical dietary requirement planning
