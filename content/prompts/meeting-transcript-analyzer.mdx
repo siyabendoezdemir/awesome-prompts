@@ -1,0 +1,159 @@
+---
+title: "Meeting Transcript Analyzer"
+emoji: "🎙️"
+category: "Business"
+author: "Siya"
+created: "2024-11-05"
+---
+
+## Overview
+
+This prompt helps analyze meeting transcripts by automatically segmenting speakers and extracting key action points. It's particularly useful for meeting documentation, project management, and team coordination.
+
+<Prompt content={`You will be given a meeting transcript that needs to be automatically segmented by speaker and analyzed for key action points. Your task is to divide the transcript by speaker, identify the main contributors, and generate brief action points based on their contributions.
+Here is the meeting transcript:
+<transcript>
+{{TRANSCRIPT}}
+</transcript>
+Follow these steps to complete the task:
+1. Identify speakers:
+   - Look for speaker names or identifiers at the beginning of each dialogue line.
+   - If speakers are not explicitly named, assign them unique identifiers (e.g., Speaker 1, Speaker 2).
+2. Segment the transcript:
+   - Group consecutive lines from the same speaker together.
+   - Start a new segment when a different speaker begins talking.
+3. Format the segmented transcript:
+   - Use the following format for each segment:
+     <speaker>
+     [Speaker Name or Identifier]
+     [Speaker's dialogue, which may span multiple lines]
+     </speaker>
+4. Identify key speakers:
+   - Determine the main contributors based on the frequency and substance of their contributions.
+5. Generate action points:
+   - For each key speaker, create 1-3 brief action points based on their most important contributions or decisions made during the meeting.
+   - Action points should be clear, concise, and actionable.
+6. Provide the output:
+   - Present the segmented transcript first, followed by the action points.
+   - Use the following format for the action points:
+     <action_points>
+     [Speaker Name or Identifier]:
+     - [Action point 1]
+     - [Action point 2]
+     - [Action point 3]
+     </action_points>`} />
+
+## Use Cases
+
+- **Meeting Documentation**: Automatically organize and structure meeting transcripts
+- **Action Item Tracking**: Extract actionable items from lengthy discussions
+- **Team Collaboration**: Clearly identify who said what and their commitments
+- **Project Management**: Track decisions and assignments from team meetings
+- **Record Keeping**: Maintain organized archives of meeting discussions
+
+## Variables
+
+The prompt contains one main variable:
+
+- `{{TRANSCRIPT}}`: The raw meeting transcript text that needs to be analyzed
+
+## XML Tags Used
+
+The prompt utilizes several XML-style tags for structuring the output:
+
+- `<transcript>`: Contains the input meeting transcript
+- `<speaker>`: Wraps each speaker's segmented dialogue
+- `<action_points>`: Contains the extracted action items
+- `<segmented_transcript>`: Wraps the entire processed transcript
+
+## Optimization Tips
+
+1. **Clean Transcript Input**
+   - Ensure the input transcript has consistent formatting
+   - Remove any unnecessary timestamps or metadata
+   - Make sure speaker names/identifiers are clearly marked
+
+2. **Speaker Identification**
+   - Use consistent naming conventions throughout
+   - If using generic identifiers (Speaker 1, Speaker 2), maintain consistency
+   - Consider adding a mapping of generic identifiers to actual names if available
+
+3. **Action Point Generation**
+   - Focus on concrete, actionable items
+   - Include deadlines or timeframes when mentioned
+   - Keep points concise and clear
+   - Prioritize important decisions and commitments
+
+4. **Output Formatting**
+   - Maintain consistent indentation for readability
+   - Use clear separators between sections
+   - Ensure all XML tags are properly closed
+
+## Example Usage
+
+<Prompt content={`Input:
+<transcript>
+John: We need to update the website by next week.
+Sarah: I can handle the design updates. Should take about 3 days.
+John: Great, and Mike, can you review the content?
+Mike: Yes, I'll review it by Thursday.
+Sarah: I'll also need access to the new brand assets.
+</transcript>
+
+Output:
+<segmented_transcript>
+<speaker>
+John
+We need to update the website by next week.
+</speaker>
+<speaker>
+Sarah
+I can handle the design updates. Should take about 3 days.
+</speaker>
+<speaker>
+John
+Great, and Mike, can you review the content?
+</speaker>
+<speaker>
+Mike
+Yes, I'll review it by Thursday.
+</speaker>
+<speaker>
+Sarah
+I'll also need access to the new brand assets.
+</speaker>
+</segmented_transcript>
+
+<action_points>
+John:
+- Follow up on website update progress by next week
+Sarah:
+- Complete design updates within 3 days
+- Obtain access to new brand assets
+Mike:
+- Review website content by Thursday
+</action_points>`} />
+
+## Best Practices
+
+1. **Contextual Understanding**: The AI should consider the context of the conversation when identifying action items
+2. **Priority Assessment**: Focus on extracting the most important action items rather than every minor task
+3. **Clear Attribution**: Ensure action items are correctly attributed to the right speakers
+4. **Time Sensitivity**: Highlight any mentioned deadlines or time-sensitive tasks
+5. **Follow-up Items**: Include any mentioned follow-up meetings or check-ins
+
+## Limitations
+
+- May struggle with heavily overlapping conversations
+- Requires relatively clean transcript input
+- Cannot interpret non-verbal communication or context
+- May miss subtle or implied action items
+- Works best with structured business discussions
+
+## Related Use Cases
+
+- Meeting minutes generation
+- Task assignment tracking
+- Project milestone documentation
+- Team responsibility allocation
+- Decision tracking systems
