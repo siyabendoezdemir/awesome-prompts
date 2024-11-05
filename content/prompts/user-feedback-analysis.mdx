@@ -1,0 +1,143 @@
+---
+title: "Structured User Feedback Analysis Prompt"
+emoji: "📊"
+category: "Analytics"
+author: "Siya"
+created: "2024-11-05"
+---
+
+# User Feedback Analysis Prompt
+
+This prompt is designed to systematically analyze and categorize user feedback data to produce actionable insights and structured reports. It's particularly useful for product managers, customer experience teams, and development teams who need to make data-driven decisions based on user feedback.
+
+## Prompt Structure
+
+<Prompt content={`
+**You are tasked with creating a summary report of user feedback for a platform. This report will help identify areas for improvement and common user requests to enhance the platform. Follow these instructions carefully to produce an accurate and useful summary.**
+
+**First, you will be provided with a set of user feedback data. This data will be contained within the following tags:**
+**<feedback_data>**
+**{{FEEDBACK_DATA}}**
+**</feedback_data>**
+
+**You will also be given the time period for which this summary should cover:**
+**<time_period>{{TIME_PERIOD}}</time_period>**
+
+[Rest of the prompt...]
+`} />
+
+## Variables
+
+The prompt contains two main variables that need to be replaced:
+
+1. `{{FEEDBACK_DATA}}`: The actual user feedback data that needs to be analyzed
+2. `{{TIME_PERIOD}}`: The specific time period for which the analysis should be conducted
+
+## Categorization Structure
+
+The prompt enforces a structured categorization system with six main categories:
+
+<Prompt content={`
+- User Interface (UI)
+- Functionality
+- Performance
+- Content
+- Customer Support
+- Other
+`} />
+
+## Output Format
+
+The output is structured in XML-style tags for clear organization:
+
+<Prompt content={`
+<summary_report>
+  <overview>...</overview>
+  <categories>...</categories>
+  <top_improvements>...</top_improvements>
+  <positive_feedback>...</positive_feedback>
+  <emerging_trends>...</emerging_trends>
+  <conclusion>...</conclusion>
+</summary_report>
+`} />
+
+## Optimization Tips
+
+1. **Data Preparation**
+   - Clean the feedback data before input
+   - Remove any PII (Personally Identifiable Information)
+   - Ensure consistent formatting
+
+2. **Time Period Specification**
+   - Use clear date ranges (e.g., "Q3 2024" or "January 1-31, 2024")
+   - Ensure the time period matches the provided feedback data
+
+3. **Customization Options**
+   - You can modify the categories based on your specific needs
+   - Add additional tags in the output structure for more specific analysis
+   - Include custom metrics or KPIs in the overview section
+
+## Use Cases
+
+1. **Product Development**
+   - Identifying feature priorities
+   - Understanding user pain points
+   - Tracking user satisfaction trends
+
+2. **Customer Experience**
+   - Monitoring support quality
+   - Identifying common issues
+   - Improving user interface based on feedback
+
+3. **Strategic Planning**
+   - Quarterly review meetings
+   - Product roadmap planning
+   - Resource allocation decisions
+
+## Best Practices
+
+1. **Data Volume**
+   - Provide at least 20-30 pieces of feedback for meaningful analysis
+   - Include feedback from various user segments
+   - Ensure feedback spans the entire time period
+
+2. **Privacy Considerations**
+   - Remove user names, emails, and IDs
+   - Anonymize specific user details
+   - Generalize very specific scenarios that might identify users
+
+3. **Analysis Quality**
+   - Look for patterns across categories
+   - Pay attention to feedback intensity
+   - Consider both frequency and impact of issues
+
+## Example Usage
+
+Here's how you might use this prompt:
+
+<Prompt content={`
+<feedback_data>
+"The login page is too slow" - User A, Oct 1
+"Love the new dashboard layout" - User B, Oct 3
+"Can't find the export button" - User C, Oct 5
+[... more feedback ...]
+</feedback_data>
+
+<time_period>October 2024</time_period>
+`} />
+
+## Limitations
+
+- The prompt doesn't perform sentiment analysis scoring
+- Doesn't track feedback trends over multiple time periods
+- Cannot validate technical feasibility of suggested improvements
+
+## Related Use Cases
+
+- Customer Satisfaction Surveys
+- Feature Request Prioritization
+- UX Research Analysis
+- Support Ticket Analysis
+- Product Development Planning
+
+Remember to adjust the prompt based on your specific needs while maintaining the structured approach to ensure consistent and actionable results.
